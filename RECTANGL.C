@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <graphics.h>
+
+int main() {
+    int gd = DETECT, gm;
+    int sideX = getmaxx() / 2;  // Corrected function calls and added semicolon
+    int sideY = getmaxy() / 2;  // Corrected function calls and added semicolon
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+    rectangle(sideX, sideY, sideX + 400, sideY + 200); // Corrected variable names and added semicolon
+    getch();
+    closegraph();
+    return 0;
+}
+

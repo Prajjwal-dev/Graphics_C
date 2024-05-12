@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<graphics.h>
+
+int main()
+{
+    // Initialize graphics driver and mode
+    int gd = DETECT, gm;
+    // Define coordinates for the vertices of the polygon
+    int vertices[][2] = {
+        {10, 10},
+        {70, 10},
+        {50, 30},
+        {30, 30},
+        {30, 50},
+        {10, 70}
+    };
+    // Number of vertices in the polygon
+    int num_vertices = sizeof(vertices) / sizeof(vertices[0]);
+    
+    // Initialize graphics system
+    initgraph(&gd, &gm, NULL);
+    // Set fill style for the polygon
+    setfillstyle(SOLID_FILL, LIGHTBLUE);
+    // Draw the polygon by connecting vertices with lines
+    for (int i = 0; i < num_vertices - 1; i++) {
+        line(vertices[i][0], vertices[i][1], vertices[i + 1][0], vertices[i + 1][1]);
+    }
+    // Connect the last vertex to the first vertex
+    line(vertices[num_vertices - 1][0], vertices[num_vertices - 1][1], vertices[0][0], vertices[0][1]);
+    // Flood fill the polygon with color
+    floodfill(15, 15, WHITE); // Using white as the fill color
+    // Wait for a key press
+    getch();
+    // Close the graphics system
+    closegraph();
+    
+    return 0;
+}
+

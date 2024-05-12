@@ -1,0 +1,27 @@
+#include <graphics.h>
+
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "");
+
+    // Draw the frame
+    line(100, 100, 400, 100); // Top horizontal line
+    line(100, 100, 100, 300); // Left vertical line
+    line(400, 100, 400, 300); // Right vertical line
+    line(100, 300, 400, 300); // Bottom horizontal line
+
+    // Draw the diagonal line
+    line(100, 100, 250, 300); // Left to bottom
+    line(250, 300, 400, 100); // Bottom to right
+
+    // Add light blue color inside the half frame area
+    setfillstyle(SOLID_FILL, LIGHTBLUE); // Choose light blue color
+    floodfill(250, 250, WHITE); // Coordinates inside the half frame area
+
+    // Close the graphics
+    delay(5000); // Delay to display the result for 5 seconds
+    closegraph();
+
+    return 0;
+}
+

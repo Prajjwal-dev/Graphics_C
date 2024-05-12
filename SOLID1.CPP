@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <conio.h>
+#include <graphics.h>
+
+void main()
+{
+	clrscr();
+	int gd = DETECT, gm;
+	initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+	//Drawing line using line() function
+	line(100, 500, 250, 200);
+	line(250, 200, 300, 100);
+	line(500, 500, 350, 200);
+	line(350, 200, 300, 100);
+	line(250, 200, 300, 200);
+	line(300, 200, 350, 200);
+	line(250, 200, 250, 500);
+	line(350, 200, 350, 500);
+	line(250, 500, 300, 200);
+	line(300, 200, 350, 500);
+	getch();
+	closegraph();
+}

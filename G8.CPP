@@ -1,0 +1,29 @@
+/*Write a graphics program to display a square whose sides are 
+100 pixels. Also draw a circle inside the square such that the 
+circumference of the circle touches al four sides of the square.
+*/
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+
+    // Draw square
+    int squareSide = 100;
+    int squareX = (getmaxx() - squareSide) / 2;
+    int squareY = (getmaxy() - squareSide) / 2;
+    rectangle(squareX, squareY, squareX + squareSide, squareY + squareSide);
+
+    // Draw circle
+    int radius = squareSide / 2;
+    int centerX = squareX + radius;
+    int centerY = squareY + radius;
+    circle(centerX, centerY, radius);
+
+    getch();
+    closegraph();
+}
+
